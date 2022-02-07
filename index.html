@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 , shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Weather Dashboard</title>
@@ -11,9 +11,11 @@
 <body>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<div class="container-fluid">
+        <script src="https://kit.fontawesome.com/d3bce829f3.js" crossorigin="anonymous"></script>
+
+        <div class="container-fluid">
     <div class="card">
-        <div class="card-body text-center bg-dark text-white">
+        <div class="card-body text-center bg-primary text-white">
             <h1>Weather Dashboard</h1>
         </div>
     </div>
@@ -30,14 +32,19 @@
             <div class="input-group mb-3">
                 <input type="text" id="queryTarget" class="form-control searchInput" placeholder="Enter City">
                 <div class="input-group-append">
-                    <button class="btn btn-outline-secondary bg-primary searchButton" type="button"
-                        id="submitBtn"><i class="fas fa-search"></i></button>
+                    <!-- <input type="text" id="queryTarget" placeholder = "Enter Location"></input>-->
+    
+                    <!--<button class="btn btn-outline-secondary bg-gradient-primary searchButton" type="button"
+                        id="submitBtn"><i class="fas fa-search"></i></button>-->
                 </div>
             </div>
-
-                <ul></ul>
+            
+                <ul class = "list-group"></ul>
             </div>
+            <br>
+            <button id="submitBtn" class = "bg-primary">Get Forecast</button>
         </div>
+     
     </div>
 </div>
 
@@ -46,13 +53,13 @@
         <h5 class="card-title mt-2 text-center">Current Forecast</h5>
     </div>
 </div>
-<div class="row">
+<div class="container-fluid">
     <div class="col mt-4">
         <div class="card pb-5 fiveDayCard pl-5">
             <!-- Appends 5 day forecast-->
             <h5 class="card-title mt-2 mr-5">5-Day Forecast </h5>
             <div class="row">
-                <div class="col fiveDayOne">
+                <div class="row fiveDayOne">
                 </div>
 
             </div>

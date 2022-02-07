@@ -4,13 +4,18 @@ console.log(document.all);
 
 var apiKey = "a798a2414f3d2a7ae306d566f277b6e5";
 
+for (var i = 0; i < localStorage.length; i++) {
+
+    var city = localStorage.getItem(i);
+    console.log(localStorage.getItem("City"));
+    var cityName = $(".list-group").addClass("list-group-item");
+    cityName.append("<li>" + city + "</li>");
+}
+
 var acceptUserInput = function(){
-var searchInput = document.getElementById('queryTarget').value;
-console.log(queryTarget.value);
-console.log(searchInput);
-
-
-
+    var searchInput = document.getElementById('queryTarget').value;
+    console.log(queryTarget.value);
+    console.log(searchInput);
 
 var apiURL = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&Appid=" + apiKey + "&units=imperial";
 
@@ -40,20 +45,16 @@ fetch(apiURL).then(function(response) {
             // // Add Wind Speed: 
             currentTemp.append("<p>" + "Wind Speed: " + data.wind.speed + "</p>");
 
-
-
-
-
+        var cityName = $(".list-group").addClass("list-group-item");
+            cityName.append("<li>" + data.name + "</li>");
 
         });
     } else {
         alert('Error');
     }
-
 });
 
 var forecastapiURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchInput + "&Appid=" + apiKey + "&units=imperial";
-
 
 fetch(forecastapiURL).then(function(response) {
     if (response.ok) {
@@ -70,10 +71,7 @@ fetch(forecastapiURL).then(function(response) {
                 FiveDayTimeUTC1 = FiveDayTimeUTC1.toLocaleDateString("en-US");
 
                 fiveDayDiv.append("<div class=fiveDayColor>" + "<p>" + FiveDayTimeUTC1 + "</p>" + `<img src="https://openweathermap.org/img/wn/${data.list[i].weather[0].icon}@2x.png">` + "<p>" + "Temperature: " + data.list[i].main.temp + "</p>" + "<p>" + "Humidity: " + data.list[i].main.humidity + "%" + "</p>" + "</div>");
-
-        
-        });
-        
+        });    
     });
         } else {
         alert('Error');
@@ -86,26 +84,4 @@ fetch(forecastapiURL).then(function(response) {
 
 submitButton.addEventListener("click", acceptUserInput);
 
-for (var i = 0; i < localStorage.length; i++) {
 
-    var city = localStorage.getItem(i);
-    // console.log(localStorage.getItem("City"));
-    var cityName = $(".list-group").addClass("list-group-item");
-
-    cityName.append("<li>" + city + "</li>");
-}
-
-
-
-
-/*fetch('https://api.openweathermap.org/data/2.5/onecall?lat=41.38&lon=2.16&appid=a798a2414f3d2a7ae306d566f277b6e5')
-.then(response => response.json())
-.then(data => {console.log(data)});*/
-
-
-
-/*var APIkey = a798a2414f3d2a7ae306d566f277b6e5;
-var city;
-var state;
-var country;
-var queryURL;*/
