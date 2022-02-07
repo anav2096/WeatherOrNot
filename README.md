@@ -5,7 +5,7 @@ Weather data is displayed in cards across the window. Each search returns curren
 
 The input looks like this:
 
-![Screen Shot](/images/Screenshsot1.png)
+![Screen Shot](/images/Screenshot1.png)
 
 The 5 day forecast is shown below:
 
@@ -17,4 +17,4 @@ Visit the web page here:
 
 My GitHub repository is avialable here:
 
-(git@github.com:anav2096/WeatherOrNot.git)
+(https://github.com/anav2096/WeatherOrNot.git)
