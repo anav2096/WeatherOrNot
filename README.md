@@ -5,7 +5,7 @@ Weather data is displayed in cards across the window. Each search returns curren
 
 The input looks like this:
 
-![Screen Shot](/images/Screenshot1.png)
+![Screen Shot](/images/ScreenShot1.png)
 
 The 5 day forecast is shown below:
 
